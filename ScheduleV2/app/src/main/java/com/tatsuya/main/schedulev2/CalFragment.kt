@@ -1,0 +1,56 @@
+package com.tatsuya.main.schedulev2
+
+import android.content.Context
+import android.os.Bundle
+import android.support.v4.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.CalendarView
+import kotlinx.android.synthetic.main.fragment_cal.*
+import java.util.*
+
+/**
+ * A simple [Fragment] subclass.
+ * Activities that contain this fragment must implement the
+ * [CalFragment.OnFragmentInteractionListener] interface
+ * to handle interaction events.
+ * Use the [CalFragment.newInstance] factory method to
+ * create an instance of this fragment.
+ *
+ */
+class CalFragment : Fragment(), CalendarView.OnDateChangeListener {
+
+    lateinit var parent:MainActivity
+
+    override fun onAttach(context: Context?) {
+        super.onAttach(context)
+        parent = context as MainActivity
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+    }
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+                              savedInstanceState: Bundle?): View? {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_cal, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val cal: Calendar = Calendar.getInstance()
+        calendarView.setOnDateChangeListener(this)
+        textView2.text = cal.get(Calendar.YEAR).toString() + "年" + cal.get(Calendar.MONTH).toString() + "月" + cal.get(Calendar.DAY_OF_MONTH).toString() + "日"
+        addbutton.setOnClickListener { parent.addmove() }
+        listbutton.setOnClickListener { parent.listmove() }
+
+    }
+
+    override fun onSelectedDayChange(view: CalendarView?, year: Int, month: Int, dayOfMonth: Int) {
+        textView2.text = year.toString() + "年" + month.toString() + "月" + dayOfMonth.toString() + "日"
+    }
+
+}

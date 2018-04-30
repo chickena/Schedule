@@ -16,7 +16,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MemoActivity"></activity>
+        <activity android:name=".MemoActivity" />
+        <activity
+            android:name=".ListActivity"
+            android:label="ListActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".CalFragment" />
     </application>
 
 </manifest>
