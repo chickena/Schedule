@@ -20,6 +20,7 @@ class TimeActivity : AppCompatActivity() {
         }
 
         val cal : Calendar = Calendar.getInstance()
+
         TimeText.text = cal.get(Calendar.HOUR_OF_DAY).toString() + ":" + cal.get(Calendar.MINUTE).toString() + ":" + cal.get(Calendar.SECOND).toString()
 
 
