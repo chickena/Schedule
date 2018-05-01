@@ -11,6 +11,9 @@ class ListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list)
         setSupportActionBar(toolbar)
+
+
+
         val intent: Intent = Intent(this, MemoActivity::class.java)
         fab.setOnClickListener {
             startActivity(intent)
