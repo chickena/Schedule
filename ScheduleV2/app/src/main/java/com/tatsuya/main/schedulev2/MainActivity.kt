@@ -13,6 +13,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val transaction = supportFragmentManager.beginTransaction()
         val calFragment = CalFragment()
+
         transaction.replace(R.id.calFrameLayout, calFragment)
         transaction.commit()
 //        val cal: Calendar = Calendar.getInstance()
@@ -43,6 +44,11 @@ class MainActivity : AppCompatActivity() {
 
     fun listmove() {
         val intent = Intent(this, ListActivity::class.java)
+        startActivity(intent)
+    }
+
+    fun timemove() {
+        val intent = Intent(this, TimeActivity::class.java)
         startActivity(intent)
     }
 

@@ -46,6 +46,7 @@ class CalFragment : Fragment(), CalendarView.OnDateChangeListener {
         textView2.text = cal.get(Calendar.YEAR).toString() + "年" + cal.get(Calendar.MONTH).toString() + "月" + cal.get(Calendar.DAY_OF_MONTH).toString() + "日"
         addbutton.setOnClickListener { parent.addmove() }
         listbutton.setOnClickListener { parent.listmove() }
+        TimeButton.setOnClickListener{parent.timemove()}
 
     }
 

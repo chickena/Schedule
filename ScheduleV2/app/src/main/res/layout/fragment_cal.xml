@@ -44,6 +44,16 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
+            android:id="@+id/TimeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="12dp"
+            android:text="Time"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/listbutton" />
+
+        <Button
             android:id="@+id/listbutton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -52,6 +62,8 @@
             android:text="list"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/addbutton" />
+
+
     </android.support.constraint.ConstraintLayout>
 
 </FrameLayout>

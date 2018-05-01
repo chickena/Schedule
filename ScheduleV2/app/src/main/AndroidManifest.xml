@@ -22,6 +22,10 @@
             android:label="ListActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".CalFragment" />
+        <activity
+            android:name=".TimeActivity"
+            android:label="@string/title_activity_time"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>
