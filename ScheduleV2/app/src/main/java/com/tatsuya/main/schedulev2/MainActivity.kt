@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
         val transaction = supportFragmentManager.beginTransaction()
         val calFragment = CalFragment()
 
-        transaction.replace(R.id.calFrameLayout, calFragment)
+        transaction.replace(R.id.calFragmentLayout, calFragment)
         transaction.commit()
 //        val cal: Calendar = Calendar.getInstance()
 //        calendarView.setOnDateChangeListener(this)
