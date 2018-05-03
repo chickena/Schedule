@@ -31,7 +31,6 @@ class MemoFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         parent.toastman()
-
         donebutton.setOnClickListener {
             parent.donemove()
         }

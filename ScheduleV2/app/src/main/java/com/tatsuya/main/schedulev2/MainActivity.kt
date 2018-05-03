@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
 
     fun addmove() {
         val intent = Intent(this, MemoActivity::class.java)
-        intent.putExtra("key1", "value1")
+//        intent.putExtra("key1", "value1")
         startActivity(intent)
 //        startActivityForResult(intent,555)で遷移した場合はメモ見て
     }
