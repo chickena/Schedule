@@ -2,9 +2,11 @@ package com.tatsuya.main.schedulev2
 
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
+import kotlinx.android.synthetic.main.fragment_memo.*
 
 class MemoActivity : AppCompatActivity() {
     var EXTRA_ITEM_ID = "extra_item_id"
@@ -26,10 +28,12 @@ class MemoActivity : AppCompatActivity() {
     }
 
     fun donemove() {
-//        startActivityForResult(intent, 555) で遷移した場合
-//        val intent = Intent(this, MainActivity::class.java)
-//        intent.putExtra("key2", "value2")
-//        setResult(Activity.RESULT_OK, intent)
+
+        val mypreference = MyPreference(this)
+
+
+
+
         finish()
     }
 

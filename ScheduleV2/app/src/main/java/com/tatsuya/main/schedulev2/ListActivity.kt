@@ -17,9 +17,7 @@ class ListActivity : AppCompatActivity() {
         val intent: Intent = Intent(this, MemoActivity::class.java)
         fab.setOnClickListener {
             startActivity(intent)
-//                          view ->
-//            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                    .setAction("Action", null).show()
+
         }
     }
 
