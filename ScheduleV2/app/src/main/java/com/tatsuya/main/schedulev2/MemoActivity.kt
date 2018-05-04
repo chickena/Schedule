@@ -23,10 +23,6 @@ class MemoActivity : AppCompatActivity() {
     }
 
     fun donemove() {
-//        startActivityForResult(intent, 555) で遷移した場合
-//        val intent = Intent(this, MainActivity::class.java)
-//        intent.putExtra("key2", "value2")
-//        setResult(Activity.RESULT_OK, intent)
         finish()
     }
 
