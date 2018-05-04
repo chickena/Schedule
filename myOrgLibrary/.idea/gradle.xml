@@ -8,7 +8,6 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/my-lib-module" />
             <option value="$PROJECT_DIR$/sharedpreferences_json" />
           </set>
         </option>

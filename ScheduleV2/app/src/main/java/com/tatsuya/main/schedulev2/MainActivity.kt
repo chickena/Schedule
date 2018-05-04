@@ -26,9 +26,9 @@ class MainActivity : AppCompatActivity() {
 //        listbutton.setOnClickListener { startActivity(listintent) }
     }
 
-    fun addmove() {
+    fun addmove(day:String) {
         val intent = Intent(this, MemoActivity::class.java)
-//        intent.putExtra("key1", "value1")
+        intent.putExtra("day", day)
         startActivity(intent)
     }
 

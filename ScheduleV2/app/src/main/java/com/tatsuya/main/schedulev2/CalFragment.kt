@@ -43,15 +43,15 @@ class CalFragment : Fragment(), CalendarView.OnDateChangeListener {
 
         val cal: Calendar = Calendar.getInstance()
         calendarView.setOnDateChangeListener(this)
-        textView2.text = cal.get(Calendar.YEAR).toString() + "年" + (cal.get(Calendar.MONTH)+1).toString() + "月" + cal.get(Calendar.DAY_OF_MONTH).toString() + "日"
-        addbutton.setOnClickListener { parent.addmove() }
+        textView2.text = cal.get(Calendar.YEAR).toString() + "/" + (cal.get(Calendar.MONTH)+1).toString() + "/" + cal.get(Calendar.DAY_OF_MONTH).toString()
+        addbutton.setOnClickListener { parent.addmove(textView2.text.toString()) }
         listbutton.setOnClickListener { parent.listmove() }
         TimeButton.setOnClickListener { parent.timemove() }
 
     }
 
     override fun onSelectedDayChange(view: CalendarView?, year: Int, month: Int, dayOfMonth: Int) {
-        textView2.text = year.toString() + "年" + (month+1).toString() + "月" + dayOfMonth.toString() + "日"
+        textView2.text = year.toString() + "/" + (month+1).toString() + "/" + dayOfMonth.toString()
     }
 
 }

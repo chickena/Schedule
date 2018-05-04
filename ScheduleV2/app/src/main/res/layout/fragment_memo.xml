@@ -9,17 +9,22 @@
     <!-- TODO: Update blank fragment layout -->
 
     <EditText
+        android:id="@+id/Datetext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:ems="10"
-        android:inputType="date"
+        android:hint="@string/memo_date"
+        android:inputType="text"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText3" />
+        app:layout_constraintTop_toBottomOf="@+id/editText"
+        android:focusable="false"
+        android:clickable="true"/>
+    <!--下2行でフォーカスは出来ないがタップは反応する-->
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/editText"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="8dp"
@@ -31,7 +36,8 @@
         app:layout_constraintBottom_toTopOf="@+id/donebutton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:hint="@string/memo_edit"/>
 
     <Button
         android:id="@+id/donebutton"

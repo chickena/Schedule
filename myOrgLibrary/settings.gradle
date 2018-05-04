@@ -1,1 +1,1 @@
-include ':my-lib-module', ':sharedpreferences_json'
+include ':sharedpreferences_json'

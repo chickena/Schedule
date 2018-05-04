@@ -9,10 +9,7 @@ import android.view.ViewGroup
 import kotlinx.android.synthetic.main.fragment_memo.*
 
 
-
-
-
-class MemoFragment : Fragment() {
+class MemoFragment : Fragment(){
 
     lateinit var parent:MemoActivity
 
@@ -20,7 +17,10 @@ class MemoFragment : Fragment() {
 
     override fun onAttach(context: Context?) {
         super.onAttach(context)
-        parent = context as MemoActivity
+        if(context is MemoActivity){
+            parent = context as MemoActivity
+        }
+
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,13 +36,21 @@ class MemoFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        //ここ無理やり過ぎだからgetArgumentsを使いたいけどエラー直せないので一時的に
+        Datetext.setText(parent.temp)
 
-        parent.toastman()
+        Datetext.setOnClickListener {
+            parent.setDate()
+        }
+
         donebutton.setOnClickListener {
-
-
-
-            parent.donemove()
+            val text:String = editText.text.toString()
+            val date:String = Datetext.text.toString()
+            if(text != "" && date != ""){
+                parent.donemove(date,text)
+            }else{
+                parent.errortoast()
+            }
         }
     }
 }
