@@ -1,15 +1,18 @@
 package com.tatsuya.main.schedulev2
 
+import android.app.DatePickerDialog
 import android.content.Context
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.DatePicker
+import android.widget.Toast
 import kotlinx.android.synthetic.main.fragment_memo.*
 
 
-class MemoFragment : Fragment() {
+class MemoFragment : Fragment(),DatePickerDialog.OnDateSetListener {
     lateinit var parent: MemoActivity
 
 
@@ -40,7 +43,9 @@ class MemoFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         Datetext.setOnClickListener {
-            parent.setDate()
+            val datepicker: DatePick = DatePick()
+            datepicker.show(parent.supportFragmentManager, "datePicker")
+//            parent.setDate()
         }
 
         donebutton.setOnClickListener {
@@ -49,9 +54,14 @@ class MemoFragment : Fragment() {
             if (text != "" && date != "") {
                 parent.donePress(date, text)
             } else {
-                parent.errorToast()
+                Toast.makeText(parent, "入力されていません", Toast.LENGTH_LONG).show()
             }
         }
+    }
+
+    override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
+        val temp = "$year/" + (month + 1) + "/$dayOfMonth"
+        Datetext.setText(temp)
     }
 
     fun dateTextFragSave(temp: String) {

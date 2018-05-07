@@ -1,16 +1,13 @@
 package com.tatsuya.main.schedulev2
 
-import android.app.DatePickerDialog
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.widget.DatePicker
-import android.widget.Toast
 import com.google.gson.Gson
 
-class MemoActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
+class MemoActivity : AppCompatActivity() {
     var temp: String = ""
 //    var EXTRA_ITEM_ID = "extra_item_id"
 
@@ -51,28 +48,28 @@ class MemoActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
     }
 
     //    Fragment->何も入力されていない時にエラー文を出す
-    fun errorToast() {
-        Toast.makeText(this, "入力されていません", Toast.LENGTH_LONG).show()
-    }
+//    fun errorToast() {
+//        Toast.makeText(this, "入力されていません", Toast.LENGTH_LONG).show()
+//    }
 
     //    Fragment->DatePickerを呼び出す関数
-    fun setDate() {
-        val datepicker: DatePick = DatePick()
-        datepicker.show(supportFragmentManager, "datePicker")
-    }
+//    fun setDate() {
+//        val datepicker: DatePick = DatePick()
+//        datepicker.show(supportFragmentManager, "datePicker")
+//    }
 
     //    DatePickerで日付を選択しOKを押した時の処理?
     //    のはずだがなぜか呼び出されない
-    override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
-        temp = "$year/" + (month + 1) + "/$dayOfMonth"
-        val transaction = supportFragmentManager.beginTransaction()
-        val memoFragment = MemoFragment()
-        val bundle = Bundle()
-        bundle.putString("day", temp)
-        memoFragment.arguments = bundle
-        transaction.commit()
-        memoFragment.dateTextFragSave(temp)
-    }
+//    override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
+//        temp = "$year/" + (month + 1) + "/$dayOfMonth"
+//        val transaction = supportFragmentManager.beginTransaction()
+//        val memoFragment = MemoFragment()
+//        val bundle = Bundle()
+//        bundle.putString("day", temp)
+//        memoFragment.arguments = bundle
+//        transaction.commit()
+//        memoFragment.dateTextFragSave(temp)
+//    }
 
     //    Json形式に変換してファイルに保存する拡張関数
     fun SharedPreferences.applytoJson(key: String, value: Any) {
